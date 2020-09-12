@@ -1,13 +1,24 @@
-#include"bits/stdc++.h"
-using namespace std;
+/*
+ * Limits for reference
+ * _____________________________________________________________________________________
+ * |Sr| Macro Name | Description                     | Value
+ * |No|____________|_________________________________|__________________________________
+ * |1.| ULLONG_MAX | Maximum value unsigned long long| 18,446,744,073,709,551,615 (10^20)
+ * |2.| LLONG_MAX  | Maximum value long long         | 9,223,372,036,854,775,807 (10^19)
+ * |3.| LLONG_MIN  | Minimum value long long         |-9,223,372,036,854,775,808 -1*(10^19)
+ * |4.| INT_MAX    | Maximum value int               | 2,147,483,647 (10^10)
+ * |5.| INT_MIN    | Minimum value int               |-2,147,483,648 (10^10)
+ *
+*/
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize ("unroll-loops")
+#include"bits/stdc++.h"
+using namespace std;
 #define FASTIO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define int long long int
 #define pb emplace_back
 #define mod 1000000007
 #define full(a) (a).begin(), (a).end()
-#define full1(a) a.begin(), a.end()
 #define FOR(i,a,n) for (int i = a; i <= n; ++i)
 #define IFOR(i,n,a) for (int i = n; i >= a; --i)
 #define printline cout<<"\n";
@@ -22,18 +33,18 @@ using namespace std;
 int32_t main()
 {
     FASTIO
-    int t;
+    int t = 1; 
     cin>>t;
     while(t--)
     {
-        int n,m,x,ele;
+        int n;
         cin>>n;  
+        std::vector<int> v(n);
+        FOR(i,1,n) 
+        {
+            cin>>v[i-1];
 
-        vector<int> v(n);
-        for(auto &i: v) cin>>i;
-
-     	std::vector<int> v(n+1);
-     	FOR(i,1,n) cin>>v[i];
+        }
     }
     return 0;
 }
