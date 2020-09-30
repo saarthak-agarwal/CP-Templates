@@ -1,19 +1,26 @@
-/*
- * Limits for reference
- * _____________________________________________________________________________________
- * |Sr| Macro Name | Description                     | Value
- * |No|____________|_________________________________|__________________________________
- * |1.| ULLONG_MAX | Maximum value unsigned long long| 18,446,744,073,709,551,615 (10^20)
- * |2.| LLONG_MAX  | Maximum value long long         | 9,223,372,036,854,775,807 (10^19)
- * |3.| LLONG_MIN  | Minimum value long long         |-9,223,372,036,854,775,808 -1*(10^19)
- * |4.| INT_MAX    | Maximum value int               | 2,147,483,647 (10^10)
- * |5.| INT_MIN    | Minimum value int               |-2,147,483,648 (10^10)
- *
-*/
+#define DEBUG
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize ("unroll-loops")
-#include"bits/stdc++.h"
+#include "bits/stdc++.h"
 using namespace std;
+template<class T> ostream& operator<<(ostream &os, vector<T> V){os << "[ ";for(auto v : V)os << v << " ";return os << "]";}
+#ifdef DEBUG
+    #define debug(...) __printer(#__VA_ARGS__, __VA_ARGS__);
+    template <typename T>
+    void __printer(const char* var_name, T&& val)
+    {
+        cerr << var_name << " = " << val << endl;
+    }
+    template <typename T, typename... Arguments>
+    void __printer(const char* arg_names, T&& val, Arguments&&... remaining_args)
+    {
+        const char* comma = strchr(arg_names + 1, ',');
+        cerr.write(arg_names, comma - arg_names) << " = " << val <<", ";
+        __printer(comma+1, remaining_args...);
+    }
+#else
+    #define debug(...) 1;
+#endif
 #define FASTIO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define int long long int
 #define pb emplace_back
@@ -21,11 +28,6 @@ using namespace std;
 #define full(a) (a).begin(), (a).end()
 #define FOR(i,a,n) for (int i = a; i <= n; ++i)
 #define IFOR(i,n,a) for (int i = n; i >= a; --i)
-#define printline cout<<"\n";
-#define db1(x) cerr << #x << " = " << x << endl;
-#define db2(x, y) cerr << "(" << #x << ", " << #y << ") = (" << x << ", " << y << ")\n"; 
-#define db3(x, y, z) cerr << "(" << #x << ", " << #y << ", " << #z << ") = (" << x << ", " << y << ", " << z << ")\n";
-#define printVector(v,l,r) FOR(i,l,r)cerr<<v[i]<<" \n"[i==r];
 #define pii pair<int,int>
 #define mp make_pair
 #define fi first
@@ -37,14 +39,8 @@ int32_t main()
     cin>>t;
     while(t--)
     {
-        int n;
-        cin>>n;  
-        std::vector<int> v(n);
-        FOR(i,1,n) 
-        {
-            cin>>v[i-1];
-
-        }
+        int n ;
+        cin>>n ;
     }
     return 0;
 }
